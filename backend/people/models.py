@@ -17,7 +17,7 @@ class Person(Trackable):
 
     first_name = models.CharField(max_length=150)
     last_name = models.CharField(max_length=150)
-    email = models.EmailField(null=True, blank=True)
+    email = models.EmailField(null=True, blank=True, unique=True)
     gender =  models.CharField(max_length=3, choices=Genders.choices, blank=True, null=True)
     date_of_birth = models.DateField()
     industry = models.CharField(max_length=150, blank=True, null=True)
