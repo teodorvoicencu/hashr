@@ -1,0 +1,30 @@
+services:
+  db:
+    image: postgres:15.3
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=hashr_db
+    volumes:
+    - db:/var/lib/postgresql/data
+
+  web:
+    build: 
+        context: backend
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./backend:/usr/src/app
+    expose:
+      - "8000"
+    ports:
+      - 8000:8000
+    environment:
+      - DB_HOST=db
+      - DB_NAME=hashr_db
+      - DB_USER=docker
+      - DB_PASS=docker
+    depends_on:
+      - db
+
+volumes:
+  db:
