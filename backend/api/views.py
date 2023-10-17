@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from people.models import Person
+from .serializers import PersonSerializer
 
-# Create your views here.
+class PersonViewSet(viewsets.ModelViewSet):
+    queryset = Person.objects.all()
+    serializer_class = PersonSerializer
+    filterset_fields = ['first_name', 'last_name', 'industry', 'email']
