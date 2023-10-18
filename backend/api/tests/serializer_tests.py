@@ -1,7 +1,7 @@
 import datetime
 
 from django.test import TestCase
-from .serializers import PersonSerializer
+from api.serializers import PersonSerializer
 
 class PersonSerializerTests(TestCase):
     def setUp(self):
