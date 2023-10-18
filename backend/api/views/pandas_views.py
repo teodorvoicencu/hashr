@@ -1,16 +1,7 @@
-from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from people.models import Person
 from people.pandas import get_avg_by_fields
-from .serializers import PersonSerializer
-from .utils import dataframe_to_json
-
-class PersonViewSet(viewsets.ModelViewSet):
-    queryset = Person.objects.all()
-    serializer_class = PersonSerializer
-    filterset_fields = ['first_name', 'last_name', 'industry', 'email']
-
+from api.utils import dataframe_to_json
 
 class PandasAvgBaseView(APIView):
     authentication_classes = []
