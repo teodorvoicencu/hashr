@@ -1,10 +1,10 @@
 [tool.black]
 line_length = 99
-target_version = ["py310"]
+target_version = ["py311"]
 exclude = ".git/"
 
 [tool.isort]
-py_version = "310"
+py_version = "311"
 profile = "black"
 line_length = 99
 extra_standard_library = ["typing_extensions"]

@@ -28,5 +28,5 @@
 | List containers    | `docker-compose ps`                                                  |
 | Run tests          | `docker-compose run web python manage.py test --pattern="*_tests.py"`|
 | Run black          | `docker-compose run web black --config ./pyproject.toml .`           |
-| Run isort          | `docker-compose run web isort .`                                     |
+| Run isort          | `docker-compose run web isort -q .`                                  |
 | Run flake8         | `docker-compose run web flake8 .`                                    |
